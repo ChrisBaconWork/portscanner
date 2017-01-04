@@ -33,12 +33,16 @@ def get_host_ports():
 
 def main():
     host, ports = get_host_ports()
-    ip = socket.gethostbyname(host)
+    try:
+        ip = socket.gethostbyname(host)
+    except:
+        print("Cannot resolve hostname")
+    socket.setdefaulttimeout(0.5)
     print("IP of host:", ip)
     try:
         results = scan(ip, ports)
     except:
-        print("Error. Input not satisfactory")
+        print("Error. Scan unsuccessful.")
     print("~~~~~~~~")
     print("Results:")
     port_open = False

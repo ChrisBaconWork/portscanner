@@ -14,10 +14,10 @@ def scan_attempt(host_port):
     try:
         s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         s.connect((host_port[0], host_port[1]))
-        print("[+] TCP port", host_port[1], "open")
+        click.secho("[+] TCP port" + " " + str(host_port[1]) + " " + "open", fg="green")
         success = True
     except:
-        print("[-] TCP port", host_port[1], "closed")
+        print("[-] TCP port", str(host_port[1]), "closed")
         success = False
     finally:
         s.close()

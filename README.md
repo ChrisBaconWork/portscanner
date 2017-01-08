@@ -9,4 +9,5 @@ Easy enough. Download the script and run it. But this is mostly an exercise for 
 Either enter the host on the command line, after the script name, or as an input once the program has started.
 
 ## TODO
+* Invalid input handler only works for user input (i.e. not when the host is a cli argument)
 * Sort out main(). It's a bit of a mess at the moment

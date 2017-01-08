@@ -20,15 +20,8 @@ def scan_attempt(host_port):
         return host_port[1]
     except:
         print("[-] TCP port", str(host_port[1]), "closed")
-        success = False
         s.close
         return "Closed"
-    # finally:
-    #     s.close()
-    # if success:
-    #     return host_port[1]
-    # else:
-    #     return "Closed"
 
 def get_host_ports():
     print("This is a multi-processing portscanner, which will search through the first 1000 possible TCP ports.")

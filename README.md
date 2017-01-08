@@ -10,4 +10,3 @@ Either enter the host on the command line, after the script name, or as an input
 
 ## TODO
 * Invalid input handler only works for user input (i.e. not when the host is a cli argument)
-* Sort out main(). It's a bit of a mess at the moment

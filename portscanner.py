@@ -42,12 +42,11 @@ def main():
     socket.setdefaulttimeout(0.5)
     results = scan(ip, ports)
     print("~~~~~~~~\nResults:")
-    port_open = False
-    for port in results:
-        if port != "Closed":
+    open_ports = filter(lambda x: x != "Closed", results)
+    if open_ports:
+        for port in open_ports:
             print("[+] TCP port", port, "open")
-            port_open = True
-    if port_open == False:
+    else:
         print("No TCP ports are open on", ip)
 
 if __name__ == "__main__":

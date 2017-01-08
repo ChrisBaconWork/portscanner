@@ -29,8 +29,7 @@ def get_host_ports():
         host = sys.argv[1]
     else:
         host = str(input("Please enter a domain name or IP address: "))
-    ports = [x for x in range(1000)]
-    return host, ports
+    return host, [x for x in range(1000)]
 
 def main():
     host, ports = get_host_ports()

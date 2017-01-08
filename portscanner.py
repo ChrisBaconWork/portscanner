@@ -25,7 +25,7 @@ def scan_attempt(host_port):
 
 def get_host_ports():
     print("This is a multi-processing portscanner, which will search through the first 1000 possible TCP ports.")
-    if len(sys.argv) > 2:
+    if len(sys.argv) > 1:
         host = sys.argv[1]
     else:
         host = str(input("Please enter a domain name or IP address: "))

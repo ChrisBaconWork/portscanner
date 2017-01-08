@@ -2,6 +2,7 @@
 import socket
 from multiprocessing import Pool
 import click
+import sys
 
 def scan(host, ports):
     processor = Pool()
@@ -28,7 +29,10 @@ def scan_attempt(host_port):
 
 def get_host_ports():
     print("This is a multi-processing portscanner, which will search through the first 1000 possible TCP ports.")
-    host = str(input("Please enter a domain name or IP address: "))
+    if not sys.argv[1]:
+        host = str(input("Please enter a domain name or IP address: "))
+    else:
+        host = sys.argv[1]
     ports = [x for x in range(1000)]
     return host, ports
 

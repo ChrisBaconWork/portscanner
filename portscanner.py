@@ -29,10 +29,10 @@ def scan_attempt(host_port):
 
 def get_host_ports():
     print("This is a multi-processing portscanner, which will search through the first 1000 possible TCP ports.")
-    if not sys.argv[1]:
-        host = str(input("Please enter a domain name or IP address: "))
-    else:
+    if len(sys.argv) == 2:
         host = sys.argv[1]
+    else:
+        host = str(input("Please enter a domain name or IP address: "))
     ports = [x for x in range(1000)]
     return host, ports
 

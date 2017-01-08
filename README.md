@@ -6,8 +6,7 @@ This script will take a domain name or IP address as input and run through the f
 ## How To Use
 Easy enough. Download the script and run it. But this is mostly an exercise for myself so I haven't bothered to create a setup file or anything like that.
 
-Either enter the host on the command line, after the script name, or as an input once the program has started. 
+Either enter the host on the command line, after the script name, or as an input once the program has started.
 
 ## TODO
-* Handle invalid user input. (At the moment all that happens is a error message is thrown up and then the program terminates.)
 * Sort out main(). It's a bit of a mess at the moment

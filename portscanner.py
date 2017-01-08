@@ -38,13 +38,10 @@ def main():
         ip = socket.gethostbyname(host)
         print("IP of host:", ip)
     except:
-        print("Cannot resolve hostname")
-    socket.setdefaulttimeout(0.5)
-    try:
-        results = scan(ip, ports)
-    except:
-        click.secho("Error. Scan unsuccessful!", fg="red")
+        click.secho("Error. Cannot resolve hostname!", fg="red")
         main()
+    socket.setdefaulttimeout(0.5)
+    results = scan(ip, ports)
     print("~~~~~~~~\nResults:")
     port_open = False
     for port in results:

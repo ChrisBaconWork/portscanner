@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import socket
 from multiprocessing import Pool
+import click
 
 def scan(host, ports):
     processor = Pool()
@@ -35,16 +36,16 @@ def main():
     host, ports = get_host_ports()
     try:
         ip = socket.gethostbyname(host)
+        print("IP of host:", ip)
     except:
         print("Cannot resolve hostname")
     socket.setdefaulttimeout(0.5)
-    print("IP of host:", ip)
     try:
         results = scan(ip, ports)
     except:
-        print("Error. Scan unsuccessful.")
-    print("~~~~~~~~")
-    print("Results:")
+        click.secho("Error. Scan unsuccessful!", fg="red")
+        main()
+    print("~~~~~~~~\nResults:")
     port_open = False
     for port in results:
         if port != "Closed":

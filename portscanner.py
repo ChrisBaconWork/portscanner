@@ -23,22 +23,22 @@ def scan_attempt(host_port):
         s.close
         return "Closed"
 
-def get_host_ports():
+def get_host_ports(restart):
     print("This is a multi-processing portscanner, which will search through the first 1000 possible TCP ports.")
-    if len(sys.argv) > 1:
+    if len(sys.argv) > 1 and restart == False:
         host = sys.argv[1]
     else:
         host = str(input("Please enter a domain name or IP address: "))
     return host, (x for x in range(1000)) # return host and port generator
 
-def main():
-    host, ports = get_host_ports()
+def main(restart = False):
+    host, ports = get_host_ports(restart)
     try:
         ip = socket.gethostbyname(host)
         print("IP of host:", ip)
     except:
         click.secho("Error. Cannot resolve hostname!", fg="red")
-        main()
+        main(True)
     socket.setdefaulttimeout(0.5)
     results = scan(ip, ports)
     print("~~~~~~~~\nResults:")

@@ -29,7 +29,7 @@ def get_host_ports():
         host = sys.argv[1]
     else:
         host = str(input("Please enter a domain name or IP address: "))
-    return host, [x for x in range(1000)] # return host and ports
+    return host, (x for x in range(1000)) # return host and port generator
 
 def main():
     host, ports = get_host_ports()
@@ -42,10 +42,10 @@ def main():
     socket.setdefaulttimeout(0.5)
     results = scan(ip, ports)
     print("~~~~~~~~\nResults:")
-    open_ports = filter(lambda x: x != "Closed", results)
+    open_ports = (x for x in filter(lambda x: x != "Closed", results)) # open_ports is a generator, meaning the list of open_ports is lazily evaluated
     if open_ports:
         for port in open_ports:
-            print("[+] TCP port", port, "open")
+           print("[+] TCP port", port, "open")
     else:
         print("No TCP ports are open on", ip)
 

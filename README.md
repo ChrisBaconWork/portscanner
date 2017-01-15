@@ -7,5 +7,3 @@ This script will take a domain name or IP address as input and run through the f
 Easy enough. Download the script and run it. But this is mostly an exercise for myself so I haven't bothered to create a setup file or anything like that.
 
 Either enter the host on the command line, after the script name, or as an input once the program has started.
-
-## TODO

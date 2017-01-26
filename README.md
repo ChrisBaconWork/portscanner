@@ -6,8 +6,8 @@ This script will take a domain name or IP address as input and run through the f
 ## How To Use
 Easy enough. Download the script and run it. But this is mostly an exercise for myself so I haven't bothered to create a setup file or anything like that.
 
-Either enter the host on the command line, after the script name, or as an input once the program has started. The second cli argument is also optional and will indicate the number of ports to scan. The default is 1000 (i.e. TCP port 0 to 1000):
+cd into the directory and run:
 
-`./portscanner <url> <ports>`
+`./portscanner <host> <ports>`
 
-Both `<url>` and `<ports` are optional.
+Both `<host>` and `<ports>` are optional. Replace `<host>` with the hostname, and `<ports>` with the range of ports you want to target. If you do not enter a portrange, then it will default to 1000 (i.e. TCP ports 0-1000).

@@ -55,6 +55,5 @@ def main(restart = False):
     else:
         print("No TCP ports are open on", ip)
 
-
 if __name__ == "__main__":
     main()

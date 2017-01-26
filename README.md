@@ -12,7 +12,7 @@ cd into the directory and run:
 
 Both `<host>` and `<ports>` are optional. Replace `<host>` with the hostname, and `<ports>` with the maximum number of ports you want to target. If you do not enter a portrange, then it will default to 1000 (i.e. TCP ports 0-1000).
 
-# Benchmarking
+## Benchmarking
 Why multiprocessing? On my machine, running through the first 1000 TCP ports of my website produces the following results:
 
 Singleprocessing | Multiprocessing
@@ -21,4 +21,4 @@ Singleprocessing | Multiprocessing
 
 There is, then, a considerable improvement in speed if we use the multiprocessing library to do this.
 
-I would like to test the speed of threads as well. 
+I would like to test the speed of threads as well.

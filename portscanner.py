@@ -3,6 +3,7 @@ import socket
 from multiprocessing import Pool
 import click
 import sys
+import time
 
 def scan(host, ports):
     processor = Pool()
@@ -53,6 +54,7 @@ def main(restart = False):
            print("[+] TCP port", port, "open")
     else:
         print("No TCP ports are open on", ip)
+
 
 if __name__ == "__main__":
     main()

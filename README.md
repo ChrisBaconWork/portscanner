@@ -10,4 +10,4 @@ cd into the directory and run:
 
 `./portscanner <host> <ports>`
 
-Both `<host>` and `<ports>` are optional. Replace `<host>` with the hostname, and `<ports>` with the range of ports you want to target. If you do not enter a portrange, then it will default to 1000 (i.e. TCP ports 0-1000).
+Both `<host>` and `<ports>` are optional. Replace `<host>` with the hostname, and `<ports>` with the maximum number of ports you want to target. If you do not enter a portrange, then it will default to 1000 (i.e. TCP ports 0-1000).

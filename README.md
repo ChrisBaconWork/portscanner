@@ -4,9 +4,7 @@ A multiprocessing TCP port scanner.
 This script will take a domain name or IP address as input and run through the first 1000 TCP ports, testing the connection to assess whether each port is open. It will then return the list of open ports.
 
 ## How To Use
-Easy enough. Download the script and run it. But this is mostly an exercise for myself so I haven't bothered to create a setup file or anything like that.
-
-cd into the directory and run:
+Download and then cd into the directory and run:
 
 `./portscanner <host> <ports>`
 
@@ -17,7 +15,7 @@ Why multiprocessing? On my machine, running through the first 1000 TCP ports of 
 
 Singleprocessing | Multiprocessing
 --- | ---
-216.20s | 34.61s
+216.20s | 35.01s
 
 There is, then, a considerable improvement in speed if we use the multiprocessing library to do this.
 

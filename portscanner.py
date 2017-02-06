@@ -27,14 +27,11 @@ def scan_attempt(host_port):
 def get_host_ports(restart):
     print("This is a multi-processing portscanner, which will search through the first 1000 possible TCP ports.")
     if len(sys.argv) > 2 and restart == False:
-        host = sys.argv[1]
-        portrange = (x for x in range(int(sys.argv[2])))
+        host, portrange = sys.argv[1], (x for x in range(int(sys.argv[2])))
     elif len(sys.argv) > 1:
-        host = sys.argv[1]
-        portrange = (x for x in range(1000))
+        host, portrange = sys.argv[1], (x for x in range(1000))
     else:
-        host = str(input("Please enter a domain name or IP address: "))
-        portrange = (x for x in range(1000))
+        host, portrange = str(input("Please enter a domain name or IP address: ")), (x for x in range(1000))
     return host, portrange  # return host and port generator
 
 def main(restart = False):

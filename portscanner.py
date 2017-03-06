@@ -1,9 +1,6 @@
 #!/usr/bin/env python3
-import socket
+import socket, click, sys, time, threading, argparse
 from multiprocessing import Pool
-import click
-import sys
-import time
 
 def scan(host, ports):
     processor = Pool()
@@ -25,14 +22,16 @@ def scan_attempt(host_port):
         return "Closed"
 
 def get_host_ports(restart):
-    print("This is a multi-processing portscanner, which will search through the first 1000 possible TCP ports.")
-    if len(sys.argv) > 2 and restart == False:
-        host, portrange = sys.argv[1], (x for x in range(int(sys.argv[2])))
-    elif len(sys.argv) > 1:
-        host, portrange = sys.argv[1], (x for x in range(1000))
-    else:
-        host, portrange = str(input("Please enter a domain name or IP address: ")), (x for x in range(1000))
-    return host, portrange  # return host and port generator
+        parser = argparse.ArgumentParser()
+        parser.add_argument("-d", dest="domain", required=True, help="host/domain to run scan against")
+        parser.add_argument("-p", dest="ports", help="number of ports to scan")
+        args = parser.parse_args()
+
+        if args.ports:
+            host, portrange = args.domain, (x for x in range(int(args.ports)))
+        else:
+            host, portrange = args.domain, (x for x in range(1000))
+        return host, portrange
 
 def main(restart = False):
     host, ports = get_host_ports(restart)

@@ -6,9 +6,11 @@ This script will take a domain name or IP address as input and run through the f
 ## How To Use
 Download and then cd into the directory and run:
 
-`./portscanner <host> <ports>`
+`./portscanner -d <host> -p <ports>`
 
-Both `<host>` and `<ports>` are optional. Replace `<host>` with the hostname, and `<ports>` with the maximum number of ports you want to target. If you do not enter a port range, then it will default to 1000 (i.e. TCP ports 0-1000); if you do not enter a hostname, then it will prompt for one during runtime.
+`<ports>` is optional. Replace `<host>` with the hostname, and `<ports>` with the maximum number of ports you want to target. If you do not enter a port range, then it will default to 1000 (i.e. TCP ports 0-1000).
+
+`./portscanner -h` for help.
 
 ## Benchmarking
 Why multiprocessing? On my machine, running through the first 1000 TCP ports of my website produces the following results:
